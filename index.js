@@ -24,7 +24,6 @@ exports.readTemperature = function(path, callback, converter) {
         if (err) {
             callback.call(this, err, null);
         } else {
-            console.log(response);
             callback.call(this, null, JSON.stringify({
                 t0: converter(response[2], response[3]),
                 t1: converter(response[4], response[5]),
