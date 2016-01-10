@@ -24,11 +24,11 @@ exports.readTemperature = function(path, callback, converter) {
         if (err) {
             callback.call(this, err, null);
         } else {
-            callback.call(this, null, JSON.stringify({
+            callback.call(this, null, {
                 t0: converter(response[2], response[3]),
                 t1: converter(response[4], response[5]),
                 t2: converter(response[6], response[7])
-            }));
+            });
         }
         device.close();
     });
