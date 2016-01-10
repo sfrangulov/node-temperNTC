@@ -30,6 +30,7 @@ exports.readTemperature = function(path, callback, converter) {
                 t2: converter(response[6], response[7])
             }));
         }
+        device.close();
     });
 }
 
